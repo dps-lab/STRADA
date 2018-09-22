@@ -19,19 +19,20 @@ if sys.argv[1] == "--help":
     print("-----------------------------------------------------------")
     print("")
     print("")
-    print("     strada_example.py --help               Show this help message")
+    print("     sample.py --help               Show this help message")
     print("")
-    print("     strada_example.py Modern_art           Transfer all images where 'Modern_art' folder")
+    print("     sample.py Modern_art           Transfer all images where 'Modern_art' folder")
     print("")
-    print("     strada_example.py style.jpg            Transfer content image with style.jpg images's style")
+    print("     sample.py style.jpg            Transfer content image with style.jpg images's style")
     print("")
 
 
 else :
+    #Check if it is file or not
     if os.path.isfile(styleDir) :
         output_fname = styleDir+("_trans.jpg")
         #Make the sentences of instruction
-        inst_sentence= ("python run_main.py --content content.jpeg "+"--style "+styleDir+" --output "+output_fname)
+        inst_sentence= ("python run_main.py --content content.jpeg "+"--style "+styleDir+" --output content_tans.jpeg")
 
         #Show where the Park Ji-sung works.
 	print ("////////////////////////////////////////////////")
@@ -46,10 +47,11 @@ else :
             for fname in files:
                 input_fname = os.path.join(root, fname)
                 temp = (input_fname.split("."))[0]
+                # Use this variable if you want place the file to same directory which is style files in.
                 output_fname = temp+("_trans.jpg")
 
     	        #Make the sentences of instruction
-                inst_sentence= ("python run_main.py --content content.jpeg "+"--style "+input_fname+" --output "+output_fname)
+                inst_sentence= ("python run_main.py --content content.jpeg "+"--style "+input_fname+" --output content_tans.jpeg")
 
                 #Show where the Park Ji-sung works.
 	        print ("////////////////////////////////////////////////")
