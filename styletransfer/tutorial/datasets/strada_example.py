@@ -8,9 +8,12 @@ import sys
 
 
 styleDir = ""
-style = sys.argv[1]
+contentDir = sys.argv[1]
+style = sys.argv[2]
 styleDir = ("style_image/" + style)
+str(contentDir)
 str(styleDir)
+#print(contentDir)
 #print(styleDir)
 
 if sys.argv[1] == "--help": 
@@ -32,7 +35,7 @@ else :
     if os.path.isfile(styleDir) :
         output_fname = styleDir+("_trans.jpg")
         #Make the sentences of instruction
-        inst_sentence= ("python run_main.py --content content.jpeg "+"--style "+styleDir+" --output content_tans.jpeg")
+        inst_sentence= ("python run_main.py --content "+contentDir+" --style "+styleDir+" --output content_tans.jpeg")
 
         #Show where the Park Ji-sung works.
 	print ("////////////////////////////////////////////////")
@@ -51,7 +54,7 @@ else :
                 output_fname = temp+("_trans.jpg")
 
     	        #Make the sentences of instruction
-                inst_sentence= ("python run_main.py --content content.jpeg "+"--style "+input_fname+" --output content_tans.jpeg")
+                inst_sentence= ("python run_main.py --content "+contentDir+" --style "+input_fname+" --output content_tans.jpeg")
 
                 #Show where the Park Ji-sung works.
 	        print ("////////////////////////////////////////////////")
